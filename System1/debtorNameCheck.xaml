@@ -1,0 +1,190 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="debtorNameCheck" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>759,1368</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="719,1288" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="DebtorLookUpWarning" />
+      <Variable x:TypeArguments="x:Boolean" Name="WarningOccured" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'DebtorName'" EmptyField="True" sap:VirtualizedContainerService.HintSize="697,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[in_TransactionItem(&quot;Debtor name&quot;).ToString.Trim + &quot;[k(enter)]&quot;]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cd752d354449bdc13202da50a9df7ad8" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='txtDebtorName' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:ImageFound DisplayName="Image Exists 'DebtorLookUp Warning'" Found="[DebtorLookUpWarning]" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="ImageFound_2">
+      <ui:ImageFound.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIUAAAAMCAYAAABMZX4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZTraQJRFITTk2VYhmXYhU1YhmXYjLDhE74wTq7LmijEsD+Gvec158l+XC6XacWKxL87iu12O51Op6HtL2K3202bzeb6HdmfiePxuCjP9SgsLIeJ7nA43Di/A97pKJYu6Vl4+CiEBt7rUbwWzHe/3w9tr8DDR0GBfB1oHwUyfxMw1wh24vKXSDHGgvRnierNRw3pfz6fv3jgtBbk5gD2YB1CngS9ZF64tOWB3evB+MwB0leORPc46sW65LN+Zbl4U0fHga7bnczh5igo1CB1vPkmGYXbRIPEeTQ9aOK0w5m+vuHIZRhvgzlkYro27D04dKOa0RkPV8abF/leD3wzD0DOBWZsgrnKA3inbK/2kpyZk7e7wl+bfuiQs9c53ByFb0halwPtZhJZPMAXXcLC2hf0AoB+o6Zc4kg2X9ob8JrPPqmZGHuc6wEf5wSIa1+gPdFz7F7kdrnOSlm/kY1vz+vHR0FRyKnj/ZujWOoLyP+soxDEwJE9JIjBZp3I1K3/XA8uTnlU/z00b9cudy4avbJ+IxvfntdofiN8OwpliNXxTTKHqJzIAgFNts5BwJlD8Y2/wyGPQx41RYxxDoRYkD3hk3ICWy4EOWue62HEi2/OR98GcWnjnXLOId/EIaeftTkDvvnGBnfvcTST4VE4hNRBiK71jSxCMCBjQQ6MwtTLazMiefoogH5w5XKTA33HCfzTTp72v9cDc+l5dP256ARxbaO/zqFv8vHVxtuZm1s54+BefBQrViTWo1hRuEyfzF/MXg3LknsAAAAASUVORK5CYII=" />
+      </ui:ImageFound.Image>
+      <ui:ImageFound.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+      </ui:ImageFound.Target>
+    </ui:ImageFound>
+    <If Condition="[DebtorLookUpWarning = True]" sap:VirtualizedContainerService.HintSize="697,698" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="336,331" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Cancel' No Records Found " sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="038d11e53fce84329aeec16c642eb45e" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='btnCancel' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:Click.Target>
+          </ui:Click>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;No Records found for &quot; + in_TransactionItem(&quot;Debtor name&quot;).ToString]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="336,550" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  btnGetJobs'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="26fb83d3f1385f076381af636c18bf4f" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='btnGetJobs' tag='INPUT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            </ui:Click.Target>
+          </ui:Click>
+          <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text 'DIV'" FormattedText="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="ClickText_1" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" SendWindowMessages="True" Text="[in_TransactionItem(&quot;Job code&quot;).ToString.Trim]">
+            <ui:ClickText.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:ClickText.CursorPosition>
+            <ui:ClickText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2907010f1cfbf53567b0a9bd6715c92f" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;ng-include&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='10' parentid='center' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:ClickText.Target>
+          </ui:ClickText>
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next&gt;&gt;'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b82ea009b496540e740c9edd9bf5235a" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='btnOk' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:Click.Target>
+          </ui:Click>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:ImageFound DisplayName="Image Exists 'UnapprovedBill Warning'" Found="[WarningOccured]" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+      <ui:ImageFound.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+      </ui:ImageFound.Image>
+      <ui:ImageFound.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Message from webpage' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+      </ui:ImageFound.Target>
+    </ui:ImageFound>
+  </Sequence>
+</Activity>

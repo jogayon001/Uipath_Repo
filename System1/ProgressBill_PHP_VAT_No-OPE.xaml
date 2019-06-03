@@ -1,0 +1,642 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Progress_PHP_VAT_No_OPE" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1394,7594</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Progress.PHP.VAT.!OPE" sap:VirtualizedContainerService.HintSize="1354,7474" sap2010:WorkflowViewState.IdRef="Sequence_248">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1332,7350" sap2010:WorkflowViewState.IdRef="Sequence_247">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1310,7226" sap2010:WorkflowViewState.IdRef="Sequence_246">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:Boolean" Name="ContactDebtorYes" />
+          <Variable x:TypeArguments="x:Boolean" Name="DebtorLookUpWarning" />
+          <Variable x:TypeArguments="x:Boolean" Name="WarningOccured" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'DebtorName'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1288,134" sap2010:WorkflowViewState.IdRef="TypeInto_365" SendWindowMessages="False" SimulateType="False" Text="[in_TransactionItem(&quot;Debtor name&quot;).ToString.Trim + &quot;[k(enter)]&quot;]">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cd752d354449bdc13202da50a9df7ad8" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='txtDebtorName' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:ImageFound DisplayName="Image Exists 'DebtorLookUp Warning'" Found="[DebtorLookUpWarning]" sap:VirtualizedContainerService.HintSize="1288,106" sap2010:WorkflowViewState.IdRef="ImageFound_49">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIUAAAAMCAYAAABMZX4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJGSURBVFhH7ZTraQJRFITTk2VYhmXYhU1YhmXYjLDhE74wTq7LmijEsD+Gvec158l+XC6XacWKxL87iu12O51Op6HtL2K3202bzeb6HdmfiePxuCjP9SgsLIeJ7nA43Di/A97pKJYu6Vl4+CiEBt7rUbwWzHe/3w9tr8DDR0GBfB1oHwUyfxMw1wh24vKXSDHGgvRnierNRw3pfz6fv3jgtBbk5gD2YB1CngS9ZF64tOWB3evB+MwB0leORPc46sW65LN+Zbl4U0fHga7bnczh5igo1CB1vPkmGYXbRIPEeTQ9aOK0w5m+vuHIZRhvgzlkYro27D04dKOa0RkPV8abF/leD3wzD0DOBWZsgrnKA3inbK/2kpyZk7e7wl+bfuiQs9c53ByFb0halwPtZhJZPMAXXcLC2hf0AoB+o6Zc4kg2X9ob8JrPPqmZGHuc6wEf5wSIa1+gPdFz7F7kdrnOSlm/kY1vz+vHR0FRyKnj/ZujWOoLyP+soxDEwJE9JIjBZp3I1K3/XA8uTnlU/z00b9cudy4avbJ+IxvfntdofiN8OwpliNXxTTKHqJzIAgFNts5BwJlD8Y2/wyGPQx41RYxxDoRYkD3hk3ICWy4EOWue62HEi2/OR98GcWnjnXLOId/EIaeftTkDvvnGBnfvcTST4VE4hNRBiK71jSxCMCBjQQ6MwtTLazMiefoogH5w5XKTA33HCfzTTp72v9cDc+l5dP256ARxbaO/zqFv8vHVxtuZm1s54+BefBQrViTWo1hRuEyfzF/MXg3LknsAAAAASUVORK5CYII=" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
+        <If Condition="[DebtorLookUpWarning = True]" sap:VirtualizedContainerService.HintSize="1288,698" sap2010:WorkflowViewState.IdRef="If_51">
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="336,331" sap2010:WorkflowViewState.IdRef="Sequence_348">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Cancel' No Records Found " sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1003" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="038d11e53fce84329aeec16c642eb45e" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='btnCancel' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;No Records found for &quot; + in_TransactionItem(&quot;Debtor name&quot;).ToString]" />
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap:VirtualizedContainerService.HintSize="336,550" sap2010:WorkflowViewState.IdRef="Sequence_349">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  btnGetJobs'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1004" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="26fb83d3f1385f076381af636c18bf4f" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='btnGetJobs' tag='INPUT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text 'DIV'" FormattedText="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="ClickText_74" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" SendWindowMessages="True" Text="[in_TransactionItem(&quot;Job code&quot;).ToString.Trim]">
+                <ui:ClickText.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:ClickText.CursorPosition>
+                <ui:ClickText.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2907010f1cfbf53567b0a9bd6715c92f" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;ng-include&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='10' parentid='center' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:ClickText.Target>
+              </ui:ClickText>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next&gt;&gt;'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1005" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b82ea009b496540e740c9edd9bf5235a" Selector="&lt;html htmlwindowname='dfrmPFAddJobsToBillaspx' title='Portfolio - Add Jobs to Bill - (PRD)' /&gt;&lt;webctrl id='btnOk' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </If.Else>
+        </If>
+        <ui:ImageFound DisplayName="Image Exists 'UnapprovedBill Warning'" Found="[WarningOccured]" sap:VirtualizedContainerService.HintSize="1288,106" sap2010:WorkflowViewState.IdRef="ImageFound_50">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Message from webpage' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
+        <If Condition="[DebtorLookUpWarning OR WarningOccured = True]" sap:VirtualizedContainerService.HintSize="1288,5898" sap2010:WorkflowViewState.IdRef="If_53">
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="486,603" sap2010:WorkflowViewState.IdRef="Sequence_356">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[WarningOccured  = True]" sap:VirtualizedContainerService.HintSize="464,479" sap2010:WorkflowViewState.IdRef="If_54">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="336,331" sap2010:WorkflowViewState.IdRef="Sequence_355">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1020" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5cb8aa132b191ec0afcd632331a4f97f" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Message from webpage' /&gt;&lt;wnd ctrlid='2' title='Cancel' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[in_TransactionItem(&quot;Debtor name&quot;).ToString + &quot; has an existing unapproved bill&quot;]" />
+                  </Sequence>
+                </If.Then>
+              </If>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap:VirtualizedContainerService.HintSize="777,5750" sap2010:WorkflowViewState.IdRef="Sequence_354">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="755,2445" sap2010:WorkflowViewState.IdRef="Sequence_353">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Portfolio Page'" sap:VirtualizedContainerService.HintSize="733,2321" sap2010:WorkflowViewState.IdRef="BrowserScope_49" InformativeScreenshot="8def99f65781765f10cc56f042cac605" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*' title='Portfolio - Billing Instructions - (PRD)' /&gt;">
+                  <ui:BrowserScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="719,2175" sap2010:WorkflowViewState.IdRef="Sequence_352">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  rbUSANo'" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="Check_161">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="efaec3705dd934d16b65d9212628e316" Selector="&lt;webctrl id='rbUSANo' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Check.Target>
+                        </ui:Check>
+                        <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  rbInterTerritory...'" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="Check_162">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2ff50051bfb832c629934b3fb44e7d85" Selector="&lt;webctrl id='rbInterTerritoryNo' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Check.Target>
+                        </ui:Check>
+                        <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  rbIntraTerritory...'" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="Check_163">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4a7e33f4834a449dfb288b3ad4de4b65" Selector="&lt;webctrl id='rbIntraTerritoryNo' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Check.Target>
+                        </ui:Check>
+                        <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  rbForeignIncomeNo'" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="Check_164">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="47ee20310471ef530ef9bbc05d37d818" Selector="&lt;webctrl id='rbForeignIncomeNo' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                          </ui:Check.Target>
+                        </ui:Check>
+                        <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="697,22" sap2010:WorkflowViewState.IdRef="Delay_351" />
+                        <ui:ImageFound DisplayName="Image Exists 'yes'" Found="[ContactDebtorYes]" sap:VirtualizedContainerService.HintSize="697,106" sap2010:WorkflowViewState.IdRef="ImageFound_51">
+                          <ui:ImageFound.Image>
+                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAdCAYAAAD7En+mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIoSURBVFhH7ZY9j0FBFIb9FZWen6BUilqjUCi0EpVCo6Qh0UoUolSiEtGITlQSHcqrk7N5x5zds2N8DLthZ++TnNy985Hs45w5cyP0TwhFfSMU9Y2nRBeLBfX7farValQqlajdblOn06HpdKpXvA8PiW42GyUFwcFgQKvVSo1BHO+VSkXN7fd7veP1OIvin0f2kMnD4aBHz8F8sVhUP8A74CQKsUajoSSY2WxG2WyW4vE4ZTIZ6vV6euYki+y+A06io9FIlSRncjKZUDQaPYtWq6XmAX4Y7Hs1TqI4lziDTDqdtooijsejWoPGhH0mqVSK6vW6fvsikUhQt9vVbz+HkyjKEA2HicViVknEfD5Xa5B9nGkbkFoul/qNqFwuq/gNnEVlc0kmk1ZJBHdcrL8kiowis2A8HitxCTKLMQ4J9l2as+EkijtSnrdms2mVLBQKesXl0mW4hPGUJcvinHFkOpfLff4tM4/9sjJsPNSMJNVq9ZtkPp+n7XarZ0/NSJ5rExZiCcaUkRmX0vfiJAoganbR3W5Hw+GQ1uu1HjmBdSj3a/ctMLMJIMJlKYMzJ8fukXYWxdnDh4C8S00gxncovppuYRM1M3oNyN7q1M6iAA0GmUXwJyDk8OTyRsne+1VkEzXPKODMmRnEOqy/xkOiDKTQoCCGzoonGg/Gb5WrxCYKMMblieAMo/nIcdt9bPKU6F8iFPWNUNQ3QlHfCEV9IxIEAfkfAX0ApUflYBXthbEAAAAASUVORK5CYII=" />
+                          </ui:ImageFound.Image>
+                          <ui:ImageFound.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                          </ui:ImageFound.Target>
+                        </ui:ImageFound>
+                        <If Condition="[ContactDebtorYes = True]" sap:VirtualizedContainerService.HintSize="697,1259" sap2010:WorkflowViewState.IdRef="If_52">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="336,292" sap2010:WorkflowViewState.IdRef="Sequence_350">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  btnBillOptionsNe...'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1006" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dc2bccffca7d1ea7dff124762dd53ccd" Selector="&lt;webctrl id='btnBillOptionsNext' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_352" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="336,1112" sap2010:WorkflowViewState.IdRef="Sequence_351">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Check ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  rbDebtorContactY...'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Check_165">
+                                <ui:Check.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c1061258c5aa280a37ebc1def2198973" Selector="&lt;webctrl id='rbDebtorContactYes' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                                </ui:Check.Target>
+                              </ui:Check>
+                              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_353" />
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Change Debto Contact'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1007" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition OffsetX="15" OffsetY="12" Position="TopLeft" />
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="05882e13b2f6fa5ea61e4b95c8ec960e" Selector="&lt;webctrl id='btnAddDebtorContact' tag='INPUT' /&gt;" WaitForReady="COMPLETE" />
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Change Debtor Contact.'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="UiElementExists_12">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="968db1c954d9d0c5faeafa938f9ac3e7" Selector="&lt;webctrl id='btnAddDebtorContact' tag='INPUT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                                </ui:UiElementExists.Target>
+                              </ui:UiElementExists>
+                              <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double Click Addresse" FormattedText="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="ClickText_75" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" SendWindowMessages="False" Text="[in_TransactionItem(&quot;Addresse F/N&quot;).ToString.Trim]">
+                                <ui:ClickText.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:ClickText.CursorPosition>
+                                <ui:ClickText.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ea2d7ba0705132fb80c6a33a2c7326ce" Selector="&lt;webctrl css-selector='body&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='8' parentid='center' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                                </ui:ClickText.Target>
+                              </ui:ClickText>
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Ok'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1008" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="352cdb1cdd53d591f3af048884f35673" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Message from webpage' /&gt;&lt;wnd ctrlid='2' title='OK' /&gt;" WaitForReady="INTERACTIVE" />
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1009" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3fdfc5b23dfd49a7c6256fb7af861738" Selector="&lt;webctrl id='btnBillOptionsNext' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <Delay Duration="00:00:00.0500000" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_355" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:BrowserScope.Body>
+                </ui:BrowserScope>
+              </Sequence>
+              <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'DIV'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_13">
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f947068442032d856e8431912005f6d9" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;prog-bill-detail&amp;gt;div&amp;gt;div' idx='1' parentid='billWizard' tag='DIV' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'FeeAmt'" EmptyField="True" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_366" SendWindowMessages="False" SimulateType="False" Text="[in_TransactionItem(&quot;Fee Amount&quot;).ToString.Trim]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b064a277309a86d768ceada0f9d5ac73" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*' title='Portfolio - Billing Instructions - (PRD)' /&gt;&lt;webctrl id='txtFeeAmt' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1010" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fa0562caf2a6358404e639ee363d5e43" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*Editgridtrue' title='Portfolio - Billing Instructions - (PRD)' /&gt;&lt;webctrl id='btnBillDetailsNext' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Default'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1011" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6d938e3f34bd5f7217fdf997b413175b" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*' title='Portfolio - Billing Instructions - (PRD)' /&gt;&lt;webctrl id='rbGSTDefaultFee' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Ok'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1012" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a4e57f36e2903a603ea873f9995389be" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Message from webpage' /&gt;&lt;wnd ctrlid='1' title='OK' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1013" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="356ff133314ad6284ff2a0c9a0fc3725" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*' title='Portfolio - Billing Instructions - (PRD)' /&gt;&lt;webctrl id='btnDetailOK' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'INPUT  btnTaxInvoice'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="46c0b2fef03060bef3f9b5f52bce699e" Selector="&lt;webctrl id='btnTaxInvoice' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CreateTaxInvoice'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1014" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="46c0b2fef03060bef3f9b5f52bce699e" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*' title='Portfolio - Billing Instructions - (PRD)' /&gt;&lt;webctrl id='btnTaxInvoice' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="755,631" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                <TryCatch.Try>
+                  <Sequence sap:VirtualizedContainerService.HintSize="336,404" sap2010:WorkflowViewState.IdRef="Sequence_357">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'WINWORD.EXE Partner Details'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a93990a799d733469b58b2bcc4b30f01" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'PartnerName'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_371" SendWindowMessages="False" SimulateType="True" Text="[in_TransactionItem(&quot;Partner&quot;).ToString]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cc5f9f3c396ced96e47fbf72e2c1b24c" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;&lt;ctrl idx='2' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="336,505" sap2010:WorkflowViewState.IdRef="Sequence_358">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'WINWORD.EXE Partner Details'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="UiElementExists_11">
+                          <ui:UiElementExists.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a93990a799d733469b58b2bcc4b30f01" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+                          </ui:UiElementExists.Target>
+                        </ui:UiElementExists>
+                        <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'PartnerName'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_372" SendWindowMessages="False" SimulateType="True" Text="[in_TransactionItem(&quot;Partner&quot;).ToString]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cc5f9f3c396ced96e47fbf72e2c1b24c" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;&lt;ctrl idx='2' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[in_TransactionItem(&quot;Debtor name&quot;).ToString + &quot; crashed. Workflow is recovering from crash&quot;]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'editable text'" EmptyField="False" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_368" SendWindowMessages="False" SimulateType="True" Text="[in_Config(&quot;ContactDetails&quot;).ToString]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4bf2c566d8901bae6ab86eba4fa3a3e4" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;&lt;ctrl idx='4' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'editable text'" EmptyField="False" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_369" SendWindowMessages="False" SimulateType="True" Text="[in_TransactionItem(&quot;Bill #&quot;).ToString]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0492e46e6057d5d491a24873d310593b" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;&lt;ctrl idx='7' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1015" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="88f8b1491ea56d7baa5feb9386f20efd" Selector="&lt;wnd app='winword.exe' cls='ThunderDFrame' title='Contact Details &amp;amp; Payment Terms' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'Bill  Details'" EmptyField="False" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_370" SendWindowMessages="False" SimulateType="False" Text="[&quot;[k(enter)]&quot; + in_TransactionItem(&quot;Bill description&quot;).ToString + &quot;[k(enter)]  [k(tab)]&quot; + &quot;[k(enter)]&quot; + &quot;PHP &quot; + Convert.ToDecimal(in_TransactionItem(&quot;Fee Amount&quot;)).ToString(&quot;#,##0.00&quot;) + &quot;[k(tab)]&quot; + &quot;[k(enter)]&quot; + &quot;PHP &quot; + Convert.ToDecimal( in_TransactionItem(&quot;Fee Amount VAT&quot;)).ToString(&quot;#,##0.00&quot;) +  &quot;[k(tab)]&quot; + &quot;[k(enter)]&quot; + &quot;PHP &quot; + Convert.ToDecimal(in_TransactionItem(&quot;Total Amount&quot;)).ToString(&quot;#,##0.00&quot;)+ &quot;[k(up)][k(back)][k(back)][k(back)][k(back)][k(back)][k(back)][k(back)][k(back)]&quot; + &quot;Progress Bill&quot; + &quot;[k(enter)]&quot; + in_TransactionItem(&quot;Job code&quot;).ToString]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7a801a10d7f52382f584e5c47f17c652" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Tax Invoice Number *' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'page tab  Add-ins'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1016" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="01f535fb4a7dd4fa445301d79092d842" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Tax Invoice Number MNL*.doc [Compatibility Mode] - Word' /&gt;&lt;wnd cls='MsoCommandBarDock' title='MsoDockTop' /&gt;&lt;wnd cls='MsoCommandBar' title='Ribbon' /&gt;&lt;wnd cls='MsoWorkPane' title='Ribbon' /&gt;&lt;wnd aaname='Ribbon' cls='NetUIHWND' /&gt;&lt;ctrl name='Ribbon' role='property page' /&gt;&lt;ctrl name='Ribbon Tabs' role='page tab list' /&gt;&lt;ctrl name='Add-ins' role='page tab' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1017" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f8449293feeeed6ee282a89ffe3aa18b" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Tax Invoice Number MNL*.doc [Compatibility Mode] - Word' /&gt;&lt;wnd cls='MsoCommandBarDock' title='MsoDockTop' /&gt;&lt;wnd cls='MsoCommandBar' title='Ribbon' /&gt;&lt;wnd cls='MsoWorkPane' title='Ribbon' /&gt;&lt;wnd aaname='Ribbon' cls='NetUIHWND' /&gt;&lt;ctrl name='Ribbon' role='property page' /&gt;&lt;ctrl name='Lower Ribbon' role='pane' /&gt;&lt;ctrl name='Add-ins' role='property page' /&gt;&lt;ctrl name='Custom Toolbars' role='tool bar' /&gt;&lt;ctrl name='Custom Toolbar' role='grouping' /&gt;&lt;ctrl name='Save Tax Invoice' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Ok'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1018" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e21e6f982f65b78b25b6e6e7c2a74a97" Selector="&lt;wnd app='winword.exe' cls='#32770' title='Tax Invoice' /&gt;&lt;wnd ctrlid='6' title='&amp;amp;Yes' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_357" />
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="Click_1019" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="59d8e1831f1fd31a2f43c9c547a31d05" Selector="&lt;html htmlwindowname='dfrmPFBillWizardaspxFunctioncreateBillTypePBillToDate2019*' title='Portfolio - Billing Instructions - (PRD)' /&gt;&lt;webctrl id='btnClose' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </If.Else>
+        </If>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
