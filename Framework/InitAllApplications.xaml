@@ -87,7 +87,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[BillItems]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="A1:Y50" SheetName="ForBilling" />
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[BillItems]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="A1:Z50" SheetName="ForBilling" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
